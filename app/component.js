@@ -127,8 +127,8 @@ angular.module("meuModulo")
 
     });
 
-angular.module("cadastro1", []).
-    component("cadastrarJog1", {
+angular.module("componentes", [])
+    .component("cadastrarJog1", {
         template:
             '<h4 class="h4j1">Jogador 1</h4>' +
             '<input ng-model="$root.nomeDoJ1" type="text" class="nomej1" placeholder="Digite seu nome">' +
@@ -136,33 +136,26 @@ angular.module("cadastro1", []).
             '<input ng-model="$root.idadeDoJ1" type="number" class="idadej1" placeholder="Digite sua idade">'
     })
 
-angular.module("cadastro2", []).
-    component("cadastrarJog2", {
+    .component("cadastrarJog2", {
         template:
             '<h4 class="h4j2">Jogador 2</h4>' +
             '<input ng-model="$root.nomeDoJ2" type="text" class="nomej2" placeholder="Digite seu nome">' +
             '<input ng-model="$root.nickDoJ2" type="text" class="nickj2" placeholder="Digite seu nick name">' +
             '<input ng-model="$root.idadeDoJ2" type="number" class="idadej2" placeholder="Digite sua idade">'
     })
-
-angular.module("verDadosJ1", []).
-    component("veDadosJ1", {
+    .component("veDadosJ1", {
         template:
             '<label class="lnomeDoJ1">Nome: {{$root.nomeDoJ1}}</label>' +
             '<label class="lnickDoJ1">Nick: {{$root.nickDoJ1}}</label>' +
             '<label class="lidadeDoJ1">Idade: {{$root.idadeDoJ1}}</label>'
     })
-
-angular.module("verDadosJ2", []).
-    component("veDadosJ2", {
+    .component("veDadosJ2", {
         template:
             '<label class="lnomeDoJ2">Nome: {{$root.nomeDoJ2}}</label>' +
             '<label class="lnickDoJ2">Nick: {{$root.nickDoJ2}}</label>' +
             '<label class="lidadeDoJ2">Idade: {{$root.idadeDoJ2}}</label>'
     })
-
-angular.module("titulos", []).
-    component("titulo", {
+    .component("titulo", {
         template:
         '<h1 class="tjd">Jogo de Dados</h1>'+
         '<h1 ng-if="$root.totalJ2 == 0" class="tv">O {{$root.nickDoJ1}} Venceu o Jogo!</h1>'+
@@ -173,9 +166,7 @@ angular.module("titulos", []).
             '<span ng-if="$root.sJ1 < $root.sJ2" class="pj2">O {{$root.nickDoJ2}} venceu</span>'+
         '</div>'
     })
-
-angular.module("jogador1", []).
-    component("j1", {
+    .component("j1", {
         template:
         '<p class="totalj1" style="color: black;">Total:{{$root.totalJ1}}</p>'+
         '<div class="d-flex flex-row justify-content-center align-items-center">'+
@@ -190,9 +181,7 @@ angular.module("jogador1", []).
         '<button ng-click="$root.paraImagem(); $root.sorteio1()" ng-disabled="$root.taCadastrado == false || $root.controle == false"'+
 'class="bj1">{{$root.jogOuPara}}</button>'
     })
-
-    angular.module("jogador2", []).
-    component("j2", {
+    .component("j2", {
         template:
         '<p class="totalj2" style="color: black;">Total:{{$root.totalJ2}}</p>'+
         '<div class="d-flex flex-row justify-content-center align-items-center">'+
@@ -207,9 +196,7 @@ angular.module("jogador1", []).
         '<button ng-click="$root.sorteio2()" ng-disabled="$root.controle"'+
 'class="bj2">{{$root.jogOuPara}}</button>'
     })  
-    
-angular.module("botoesRecomecar", []).
-    component("btnRecomeca", {
+    .component("btnRecomeca", {
         template:
         '<button ng-show="$root.totalJ1 == 0 || $root.totalJ2 == 0" ng-click="$root.reset()" class="recomecar">Recomeçar</button>'+
         '<button ng-show="$root.totalJ1 == 0 || $root.totalJ2 == 0"'+
