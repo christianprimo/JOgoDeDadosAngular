@@ -1,1 +1,1 @@
-angular.module("meuModulo", ['cadastro1', 'cadastro2', 'verDadosJ1', 'verDadosJ2', 'titulos', 'jogador1', 'jogador2', 'botoesRecomecar']);
+angular.module("meuModulo", ['componentes']);
