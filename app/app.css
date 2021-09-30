@@ -1,0 +1,311 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+.pagina {
+  background-color: slategray;
+}
+
+label {
+  color: midnightblue;
+  font: bold;
+  font-family: helvetica;
+}
+
+p {
+  color: navy;
+}
+
+.j1 {
+  margin: 8vw 0 0 35vw;
+  float: left;
+  max-width: 10px;
+  max-height: 10px;
+  z-index: 1;
+  position: absolute;
+}
+
+.j2 {
+  margin: 8vw 0 0 8vw;
+  float: right;
+  max-width: 10px;
+  max-height: 10px;
+  z-index: 1;
+  position: absolute;
+}
+
+.botoes {
+  margin: 23vw 0 0 0;
+  max-width: 191px;
+  max-height: 1px;
+  z-index: 1;
+  position: absolute;
+}
+
+.jogar {
+
+  margin: 23vw 0 0 35vw;
+  max-width: 191px;
+  z-index: 1;
+  position: absolute;
+}
+
+.recomecar {
+
+  margin: 40% 0 0 25%;
+  z-index: 1;
+  position: absolute;
+}
+
+.tjd {   
+  margin: 2% 0 0 37.5%;
+  text-align: center;
+  color: whitesmoke;
+  z-index: 1;
+  position: absolute;
+}
+
+.imgdado1 {
+  max-width: 400px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.imgdado2 {
+  max-width: 400px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.pj1 {
+  color: greenyellow;
+  margin: 6% 0 0 31%;
+  float: left;
+  z-index: 1;
+  position: absolute;
+
+}
+
+.pe {
+  color: red;
+  margin: 6% 0 0 45%;
+  float: initial;
+  z-index: 1;
+  position: absolute;
+}
+
+.pj2 {
+  color: greenyellow;
+  margin: 6% 0 0 55%;
+  width: 200px;
+  float: right;
+  z-index: 1;
+  position: absolute;
+}
+
+.bj1 {
+  margin-top: 1vw;
+}
+
+.bj2 {
+  margin-top: 1vw;
+}
+
+.cadjog1 {
+
+  float: left;
+  position: relative;
+  max-width: 40%;
+  max-height: 40%;
+  margin-top: 350px;
+}
+
+.cadjog2 {
+
+  float: right;
+  position: relative;
+  max-width: 40%;
+  max-height: 40%;
+  margin-top: 350px;
+}
+
+.nomej1 {
+  float: left;
+  margin: 5px 0 0 0;
+}
+
+.nickj1 {
+  float: left;
+  margin: 10px 700px 0 0;
+}
+
+.idadej1 {
+  float: left;
+  margin: 10px 550px 0 0;
+}
+
+.h4j1 {
+  margin: 0 0 0 40px;
+}
+
+.nomej2 {
+  float: right;
+  margin: 5px 0 0 500px;
+}
+
+.nickj2 {
+  float: right;
+  margin: 10px 0 0 700px;
+}
+
+.idadej2 {
+  float: right;
+  margin: 10px 0 0 550px;
+}
+
+.h4j2 {
+  float: right;
+  margin: 5px 50px 0 0;
+}
+
+.dadosj1 {
+
+  float: left;
+  max-width: 1px;
+  max-height: 1px;
+  margin: 25px 0 0 20px;
+}
+
+.dadosj2 {
+
+  float: right;
+  margin-left: 400px;
+  max-width: 1px;
+  max-height: 1px;
+  margin-top: 40px;
+}
+
+.lnomeDoJ1 {
+  float: left;
+  margin: 10px 0 5px 0;
+}
+
+.lnickDoJ1 {
+  float: left;
+  margin: 0 0 5px 0;
+}
+
+.lidadeDoJ1 {
+  float: left;
+  margin: 0 0 5px 0;
+}
+
+.nomeDoJ1 {
+  float: left;
+  margin: 0 0 0 50px;
+}
+
+.nickDoJ1 {
+  float: left;
+  margin: 0 0 0 50px;
+}
+
+.idadeDoJ1 {
+  float: left;
+  margin: 0 0 0 70px;
+}
+
+.lnomeDoJ2 {
+  float: right;
+  margin: 10px 115px 5px 0;
+}
+
+.lnickDoJ2 {
+  float: right;
+  margin: 0 125px 5px 0;
+}
+
+.lidadeDoJ2 {
+  float: right;
+  margin: 0 115px 5px 0;
+}
+
+.nomeDoJ2 {
+  float: right;
+  margin: 0 50px 0 0;
+}
+
+.nickDoJ2 {
+  float: right;
+  margin: 0 50px 0 0;
+}
+
+.idadeDoJ2 {
+  float: right;
+  margin: 0 70px 0 0;
+}
+
+.imgdiv1 {
+  background-color: lightslategrey;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  position: relative;
+}
+
+.imgdiv2 {
+  background-color: lightslategrey;
+  float: right;
+  width: 50%;
+  height: 100vh;
+  position: relative;
+}
+
+.tv {
+  z-index: 1;
+  position: absolute;
+  margin: 25% 0 0 32%;
+}
+
+.mudaCJ1{
+  z-index: 1;
+  position: absolute;
+  margin: 40% 0 0 35%;
+}
+
+.mudaCJ2{
+  z-index: 1;
+  position: absolute;
+  margin: 40% 0 0 45%;
+}
+
+.mudaCTds{
+  z-index: 1;
+  position: absolute;
+  margin: 40% 0 0 55%;
+}
