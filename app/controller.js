@@ -1,10 +1,10 @@
-angular.module("meuModulo")
+angular.module("myApp")
     .controller("indexController", function ($scope, $rootScope) {
         $rootScope.totalJ1 = 10;
         $rootScope.totalJ2 = 10;
         $rootScope.valor = 0;
         $rootScope.sJ1 = 0;
-        $rootScope.sJ2 = 0;        
+        $rootScope.sJ2 = 0;
         $scope.controleIf = 1;
         $scope.mc = 1;
         $scope.md = 1;
@@ -17,6 +17,7 @@ angular.module("meuModulo")
         $scope.cadOuOk = "Cadastrar jogadores";
         $scope.dadoOuOk = "Ver dados";
         $rootScope.jogOuPara = "Jogar";
+
         $scope.intervalo = setInterval(function () {
             if ($rootScope.valor > 5)
                 $rootScope.valor = 0;
