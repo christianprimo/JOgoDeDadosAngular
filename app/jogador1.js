@@ -10,7 +10,8 @@ angular.module("componentes")
             '<img ng-if="$root.valor == 4 || $root.sJ1 == 4" src="pictures/dado4.png" class="imgdado1"><br><br>' +
             '<img ng-if="$root.valor == 5 || $root.sJ1 == 5" src="pictures/dado5.png" class="imgdado1"><br><br>' +
             '<img ng-if="$root.valor == 6 || $root.sJ1 == 6" src="pictures/dado6.png" class="imgdado1"><br><br>' +
-            '</div>' +
-            '<button ng-click="$root.paraImagem(); $root.sorteio1()" ng-disabled="$root.taCadastrado == false || $root.controle == false"' +
+            '</div>' +                        
+            '<button ng-click="$root.paraImagem(); $root.sorteio1()" ng-disabled="!$root.taCadastrado || !$root.controle"' +
             'class="bj1">{{$root.jogOuPara}}</button>'
+            
     })

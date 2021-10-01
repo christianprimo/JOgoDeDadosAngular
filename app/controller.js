@@ -5,17 +5,13 @@ angular.module("myApp")
         $rootScope.valor = 0;
         $rootScope.sJ1 = 0;
         $rootScope.sJ2 = 0;
-        $scope.controleIf = 1;
-        $scope.mc = 1;
-        $scope.md = 1;
+        $scope.controleIf = true;
         $rootScope.controle = true;
         $rootScope.mostraVencedor = false;
         $scope.mostraDados = false;
         $rootScope.taCadastrado = false;
         $rootScope.mostraCadJ1 = false;
         $rootScope.mostraCadJ2 = false;
-        $scope.cadOuOk = "Cadastrar jogadores";
-        $scope.dadoOuOk = "Ver dados";
         $rootScope.jogOuPara = "Jogar";
 
         $scope.intervalo = setInterval(function () {
@@ -31,18 +27,7 @@ angular.module("myApp")
         }
 
         $scope.mostraCad = function () {
-            if ($scope.mc == 1) {
-                $scope.mc = 0;
-                $scope.mostraCadastro = true;
-                $scope.cadOuOk = "Ok";
-            }
-            else {
-                $scope.mostraCadastro = false;
-                $rootScope.mostraCadJ1 = false;
-                $rootScope.mostraCadJ2 = false;
-                $scope.verificaCadastro();
-                $scope.cadOuOk = "Cadastrar jogadores";
-            }
+            $scope.mostraCadastro = !$scope.mostraCadastro;
         }
 
         $scope.verificaCadastro = function () {
@@ -50,40 +35,31 @@ angular.module("myApp")
                 $rootScope.taCadastrado = true;
         }
 
-        $scope.mostraData = function () {
-            if ($scope.md == 1) {
-                $scope.mostraDados = true;
-                $scope.dadoOuOk = "Ok";
-                $scope.md = 0;
-            }
-            else {
-                $scope.mostraDados = false;
-                $scope.dadoOuOk = "Ver Dados";
-                $scope.md = 1;
-            }
+        $scope.mostraData = function () {          
+                $scope.mostraDados = !$scope.mostraDados;
         }
 
         $rootScope.sorteio1 = function () {
             $rootScope.valor = 7;
             $rootScope.mostraVencedor = false;
-            if ($scope.controleIf == 1) {
-                $scope.controleIf = 0;
-                $rootScope.jogOuPara = "Parar";
+            if ($scope.controleIf) {
+                $scope.controleIf = false;   
+                $rootScope.jogOuPara = "Parar";             
                 $scope.sorteioJ1 = setInterval(function () {
                     $rootScope.sJ1 = Math.floor(Math.random() * 6 + 1);
                     $scope.$digest();
                 }, 100);
             }
             else {
-                $rootScope.controle = false;
                 $rootScope.jogOuPara = "Jogar";
+                $rootScope.controle = false;
                 clearInterval($scope.sorteioJ1);
             }
         }
 
         $rootScope.sorteio2 = function () {
-            if ($scope.controleIf == 0) {
-                $scope.controleIf = 1;
+            if (!$scope.controleIf) {
+                $scope.controleIf = true;
                 $rootScope.jogOuPara = "Parar";
                 $scope.sorteioJ2 = setInterval(function () {
                     $rootScope.sJ2 = Math.floor(Math.random() * 6 + 1);
@@ -91,8 +67,8 @@ angular.module("myApp")
                 }, 100);
             }
             else {
-                $rootScope.controle = true;
                 $rootScope.jogOuPara = "Jogar";
+                $rootScope.controle = true;
                 clearInterval($scope.sorteioJ2);
                 $scope.veVencedor();
                 $rootScope.mostraVencedor = true;

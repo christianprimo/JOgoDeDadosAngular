@@ -24,7 +24,7 @@
       <div class="j1">
           <j1></j1>
       </div>
-      <button ng-click="mostraData()" ng-hide="taCadastrado == false" class="jogar">{{dadoOuOk}}</button>
+      <button ng-click="mostraData()" ng-hide="!taCadastrado" class="jogar">{{ mostraDados ? "Ok" : "Ver dados" }}</button>
       <div ng-show="mostraCadastro || $root.mostraCadJ1" class="cadjog1">
           <cadastrar-jog1></cadastrar-jog1>
       </div>
@@ -40,7 +40,7 @@
           <ve-dados-j2></ve-dados-j2>
       </div>
       <div class="botoes">
-          <button ng-click="mostraCad()" ng-disabled="taCadastrado" class="cadastro">{{cadOuOk}}</button>
+          <button ng-click="mostraCad(); verificaCadastro()" ng-disabled="taCadastrado" class="cadastro">{{mostraCadastro ? "Ok" : "Cadastrar Jogadores"}}</button>
       </div>
       <div ng-show="mostraCadastro || $root.mostraCadJ2" class="cadjog2">
           <cadastrar-jog2></cadastrar-jog2>
