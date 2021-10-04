@@ -1,5 +1,5 @@
 angular.module("components")    
-    .component("cadastrarJog2", {
+    .component("registerPlayer2", {
         template:
             '<h4 class="h4j2">Jogador 2</h4>' +
             '<input ng-model="$root.nameOfP2" type="text" class="nomej2" placeholder="Digite seu nome">' +

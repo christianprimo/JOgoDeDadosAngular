@@ -4,7 +4,7 @@ angular.module("myApp")
         $rootScope.totalP2 = 10;
         $rootScope.value = 0;
         $rootScope.playerSort1 = 0;
-        $rootScope.playerSort2 = 0;        
+        $rootScope.playerSort2 = 0;
         $rootScope.control = true;
         $rootScope.showWinner = false;
         $scope.showData = false;
@@ -31,7 +31,7 @@ angular.module("myApp")
 
         $scope.checkRegistration = function () {
             if ($rootScope.nameOfP1 != undefined && $rootScope.nickOfP1 != undefined && $rootScope.ageOfP1 != undefined && $rootScope.nameOfP2 != undefined && $rootScope.nickOfP2 != undefined && $rootScope.ageOfP2 != undefined)
-                $rootScope.isRegistered = true;               
+                $rootScope.isRegistered = true;
         }
 
         $scope.shoData = function () {
@@ -45,11 +45,11 @@ angular.module("myApp")
 
                 $scope.sortsPlayer = setInterval(function () {
                     if (player == 1) {
-                        $rootScope.playerSort1 = Math.floor(Math.random() * 6 + 1);                        
+                        $rootScope.playerSort1 = Math.floor(Math.random() * 6 + 1);
                         $scope.$digest();
                     }
                     else {
-                        $rootScope.playerSort2 = Math.floor(Math.random() * 6 + 1);                       
+                        $rootScope.playerSort2 = Math.floor(Math.random() * 6 + 1);
                         $scope.$digest();
 
                     }

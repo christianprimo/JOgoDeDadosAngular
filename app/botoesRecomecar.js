@@ -1,5 +1,5 @@
 angular.module("components")               
-    .component("btnRecomeca", {
+    .component("btnRestart", {
         template:
             '<button ng-show="$root.totalP1 == 0 || $root.totalP2 == 0" ng-click="$root.reset()" class="recomecar">Recomeçar</button>' +
             '<button ng-show="$root.totalP1 == 0 || $root.totalP2 == 0"' +

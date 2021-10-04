@@ -2,66 +2,71 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">  
-  <link rel="stylesheet" href="app.css">
-  <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+
 <body ng-controller="indexController" class="pagina">
-  <titulo></titulo>
-  <div class="imgdiv1" ng-show="totalP1 != 0 && totalP2 != 0"
-      ng-style="{'background-color' : value == 1 ? 'orange' : (value == 2 ? 'orangered' : value == 3 ? 'yellow' : value == 4 ? 'yellowgreen' : value == 5 ? 'salmon' : value == 6 ? 'tomato' : playerSort1 > playerSort2 ? 'green' : playerSort1 < playerSort2 ? 'red' : 'gray')}">
-      <div ng-show="showData" class="dadosj1">
-          <ve-dados-j1></ve-dados-j1>
-      </div>
-      <div class="j1">
-          <j1></j1>
-      </div>
-      <button ng-click="shoData()" ng-hide="!isRegistered" class="jogar">{{ showData ? "Ok" : "Ver dados" }}</button>
-      <div ng-show="showRegistration || $root.showRegistrationP1" class="cadjog1">
-          <cadastrar-jog1></cadastrar-jog1>
-      </div>
-  </div>
-  <btn-recomeca></btn-recomeca>
-  <div class="imgdiv2" ng-show="totalP1 != 0 && totalP2 != 0"
-      ng-style="{'background-color' : value == 1 ? 'aqua' : (value == 2 ? 'aquamarine' : value == 3 ? 'cyan' : value == 4 ? 'lightskyblue' : value == 5 ? 'slateblue' : value == 6 ? 'steelblue': playerSort1 < playerSort2 ? 'green' : playerSort1 > playerSort2 ? 'red' : 'gray')}">
-      <div class="j2">
-          <j2></j2>
-      </div>
+    <titles></titles>
+    <div class="imgdiv1" ng-show="totalP1 != 0 && totalP2 != 0"
+        ng-style="{'background-color' : value == 1 ? 'orange' : (value == 2 ? 'orangered' : value == 3 ? 'yellow' : value == 4 ? 'yellowgreen' : value == 5 ? 'salmon' : value == 6 ? 'tomato' : playerSort1 > playerSort2 ? 'green' : playerSort1 < playerSort2 ? 'red' : 'gray')}">
+        <div ng-show="showData" class="dadosj1">
+            <see-data-player1></see-data-player1>
+        </div>
+        <div class="j1">
+            <p1></p1>
+        </div>
+        <button ng-click="shoData()" ng-hide="!isRegistered" class="jogar">{{ showData ? "Ok" : "Ver dados" }}</button>
+        <div ng-show="showRegistration || $root.showRegistrationP1" class="cadjog1">
+            <register-player1></register-player1>
+        </div>
+    </div>
+    <btn-restart></btn-restart>
+    <div class="imgdiv2" ng-show="totalP1 != 0 && totalP2 != 0"
+        ng-style="{'background-color' : value == 1 ? 'aqua' : (value == 2 ? 'aquamarine' : value == 3 ? 'cyan' : value == 4 ? 'lightskyblue' : value == 5 ? 'slateblue' : value == 6 ? 'steelblue': playerSort1 < playerSort2 ? 'green' : playerSort1 > playerSort2 ? 'red' : 'gray')}">
+        <div class="j2">
+            <p2></p2>
+        </div>
 
-      <div ng-show="showData" class="dadosj2">
-          <ve-dados-j2></ve-dados-j2>
-      </div>
-      <div class="botoes">
-          <button ng-click="showRegis(); checkRegistration()" ng-disabled="isRegistered" class="cadastro">{{showRegistration ? "Ok" : "Cadastrar Jogadores"}}</button>
-      </div>
-      <div ng-show="showRegistration || $root.showRegistrationP2" class="cadjog2">
-          <cadastrar-jog2></cadastrar-jog2>
-      </div>
-  </div>
+        <div ng-show="showData" class="dadosj2">
+            <see-data-player2></see-data-player2>
+        </div>
+        <div class="botoes">
+            <button ng-click="showRegis(); checkRegistration()" ng-disabled="isRegistered"
+                class="cadastro">{{showRegistration ? "Ok" : "Cadastrar Jogadores"}}</button>
+        </div>
+        <div ng-show="showRegistration || $root.showRegistrationP2" class="cadjog2">
+            <register-player2></register-player2>
+        </div>
+    </div>
 
-  <!--[if lt IE 7]>
+    <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
+    <div ng-view></div>
 
-  <div>AngularJS seed app: v<span app-version></span></div>
+    <div>AngularJS seed app: v<span app-version></span></div>
 
-  <!-- In production use:
+    <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="controller.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
     <script src="cadastrarJ1.js"></script>
     <script src="cadastrarJ2.js"></script>
     <script src="verDadosJ1.js"></script>
@@ -70,10 +75,11 @@
     <script src="jogador1.js"></script>
     <script src="jogador2.js"></script>
     <script src="botoesRecomecar.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="core/version/version.js"></script>
-  <script src="core/version/version-directive.js"></script>
-  <script src="core/version/interpolate-filter.js"></script>
+    <script src="view1/view1.js"></script>
+    <script src="view2/view2.js"></script>
+    <script src="core/version/version.js"></script>
+    <script src="core/version/version-directive.js"></script>
+    <script src="core/version/interpolate-filter.js"></script>
 </body>
+
 </html>

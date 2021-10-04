@@ -1,5 +1,5 @@
 angular.module("components")        
-     .component("j1", {
+     .component("p1", {
         template:
             '<p class="totalP1" style="color: black;">Total:{{$root.totalP1}}</p>' +
             '<div>' +

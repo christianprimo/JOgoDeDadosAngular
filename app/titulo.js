@@ -1,5 +1,5 @@
 angular.module("components")        
-    .component("titulo", {
+    .component("titles", {
         template:
             '<h1 class="tjd">Jogo de Dados</h1>' +
             '<h1 ng-if="$root.totalP2 == 0" class="tv">O {{$root.nickOfP1}} Venceu o Jogo!</h1>' +
