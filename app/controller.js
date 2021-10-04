@@ -4,8 +4,7 @@ angular.module("myApp")
         $rootScope.totalJ2 = 10;
         $rootScope.valor = 0;
         $rootScope.sJ1 = 0;
-        $rootScope.sJ2 = 0;
-        $scope.controleIf = true;
+        $rootScope.sJ2 = 0;        
         $rootScope.controle = true;
         $rootScope.mostraVencedor = false;
         $scope.mostraDados = false;
@@ -46,17 +45,11 @@ angular.module("myApp")
 
                 $scope.sorteioJ = setInterval(function () {
                     if (jogador == 1) {
-                        $rootScope.sJ1 = Math.floor(Math.random() * 6 + 1);
-                        console.log(jogador);
-                        console.log($rootScope.sJ1);
-                        console.log($rootScope.sJ2);
+                        $rootScope.sJ1 = Math.floor(Math.random() * 6 + 1);                        
                         $scope.$digest();
                     }
                     else {
-                        $rootScope.sJ2 = Math.floor(Math.random() * 6 + 1);
-                        console.log(jogador);
-                        console.log($rootScope.sJ1);
-                        console.log($rootScope.sJ2);
+                        $rootScope.sJ2 = Math.floor(Math.random() * 6 + 1);                       
                         $scope.$digest();
 
                     }
@@ -67,11 +60,11 @@ angular.module("myApp")
                 clearInterval($scope.sorteioJ);
             }
             $rootScope.jogOuPara = !$rootScope.jogOuPara;
-            if(jogador == 2 && !$rootScope.jogOuPara){ 
+            if (jogador == 2 && !$rootScope.jogOuPara) {
                 $scope.calcWinner();
                 $rootScope.mostraVencedor = true;
             }
-        }       
+        }
 
         $scope.calcWinner = function () {
             if ($rootScope.sJ1 > $rootScope.sJ2)
