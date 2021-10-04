@@ -1,16 +1,16 @@
-angular.module("componentes")            
+angular.module("components")            
     .component("j2", {
         template:
-            '<p class="totalj2" style="color: black;">Total:{{$root.totalJ2}}</p>' +
+            '<p class="totalP2" style="color: black;">Total:{{$root.totalP2}}</p>' +
             '<div class="d-flex flex-row justify-content-center align-items-center">' +
-            '<img ng-hide="$root.valor > 0" src="pictures/dado0.png" class="imgdado2"><br><br>' +
-            '<img ng-if="$root.valor == 1 || $root.sJ2 == 1" src="pictures/dado1.png" class="imgdado2"><br><br>' +
-            '<img ng-if="$root.valor == 2 || $root.sJ2 == 2" src="pictures/dado2.png" class="imgdado2"><br><br>' +
-            '<img ng-if="$root.valor == 3 || $root.sJ2 == 3" src="pictures/dado3.png" class="imgdado2"><br><br>' +
-            '<img ng-if="$root.valor == 4 || $root.sJ2 == 4" src="pictures/dado4.png" class="imgdado2"><br><br>' +
-            '<img ng-if="$root.valor == 5 || $root.sJ2 == 5" src="pictures/dado5.png" class="imgdado2"><br><br>' +
-            '<img ng-if="$root.valor == 6 || $root.sJ2 == 6" src="pictures/dado6.png" class="imgdado2"><br><br>' +
+            '<img ng-hide="$root.value > 0" src="pictures/dado0.png" class="imgdado2"><br><br>' +
+            '<img ng-if="$root.value == 1 || $root.playerSort2 == 1" src="pictures/dado1.png" class="imgdado2"><br><br>' +
+            '<img ng-if="$root.value == 2 || $root.playerSort2 == 2" src="pictures/dado2.png" class="imgdado2"><br><br>' +
+            '<img ng-if="$root.value == 3 || $root.playerSort2 == 3" src="pictures/dado3.png" class="imgdado2"><br><br>' +
+            '<img ng-if="$root.value == 4 || $root.playerSort2 == 4" src="pictures/dado4.png" class="imgdado2"><br><br>' +
+            '<img ng-if="$root.value == 5 || $root.playerSort2 == 5" src="pictures/dado5.png" class="imgdado2"><br><br>' +
+            '<img ng-if="$root.value == 6 || $root.playerSort2 == 6" src="pictures/dado6.png" class="imgdado2"><br><br>' +
             '</div>' +
-            '<button ng-click="$root.sorteio(2)" ng-disabled="$root.controle"' +
-            'class="bj2">{{$root.jogOuPara ? "Parar" : "Jogar"}}</button>'
+            '<button ng-click="$root.sort(2)" ng-disabled="$root.control"' +
+            'class="bj2">{{$root.rollDice ? "Parar" : "Jogar"}}</button>'
     })

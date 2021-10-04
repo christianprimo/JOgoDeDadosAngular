@@ -1,96 +1,96 @@
 angular.module("myApp")
     .controller("indexController", function ($scope, $rootScope) {
-        $rootScope.totalJ1 = 10;
-        $rootScope.totalJ2 = 10;
-        $rootScope.valor = 0;
-        $rootScope.sJ1 = 0;
-        $rootScope.sJ2 = 0;        
-        $rootScope.controle = true;
-        $rootScope.mostraVencedor = false;
-        $scope.mostraDados = false;
-        $rootScope.taCadastrado = false;
-        $rootScope.mostraCadJ1 = false;
-        $rootScope.mostraCadJ2 = false;
-        $rootScope.jogOuPara = false;
+        $rootScope.totalP1 = 10;
+        $rootScope.totalP2 = 10;
+        $rootScope.value = 0;
+        $rootScope.playerSort1 = 0;
+        $rootScope.playerSort2 = 0;        
+        $rootScope.control = true;
+        $rootScope.showWinner = false;
+        $scope.showData = false;
+        $rootScope.isRegistered = false;
+        $rootScope.showRegistrationP1 = false;
+        $rootScope.showRegistrationP2 = false;
+        $rootScope.rollDice = false;
 
-        $scope.intervalo = setInterval(function () {
-            if ($rootScope.valor > 5)
-                $rootScope.valor = 0;
+        $scope.interval = setInterval(function () {
+            if ($rootScope.value > 5)
+                $rootScope.value = 0;
 
-            $rootScope.valor++;
+            $rootScope.value++;
             $scope.$digest();
         }, 1000);
 
-        $rootScope.paraImagem = function () {
-            clearInterval($scope.intervalo);
+        $rootScope.stopImage = function () {
+            clearInterval($scope.interval);
         }
 
-        $scope.mostraCad = function () {
-            $scope.mostraCadastro = !$scope.mostraCadastro;
+        $scope.showRegis = function () {
+            $scope.showRegistration = !$scope.showRegistration;
         }
 
-        $scope.verificaCadastro = function () {
-            if ($rootScope.nomeDoJ1 != undefined && $rootScope.nickDoJ1 != undefined && $rootScope.idadeDoJ1 != undefined && $rootScope.nomeDoJ2 != undefined && $rootScope.nickDoJ2 != undefined && $rootScope.idadeDoJ2 != undefined)
-                $rootScope.taCadastrado = true;
+        $scope.checkRegistration = function () {
+            if ($rootScope.nameOfP1 != undefined && $rootScope.nickOfP1 != undefined && $rootScope.ageOfP1 != undefined && $rootScope.nameOfP2 != undefined && $rootScope.nickOfP2 != undefined && $rootScope.ageOfP2 != undefined)
+                $rootScope.isRegistered = true;               
         }
 
-        $scope.mostraData = function () {
-            $scope.mostraDados = !$scope.mostraDados;
+        $scope.shoData = function () {
+            $scope.showData = !$scope.showData;
         }
 
-        $rootScope.sorteio = function (jogador) {
-            $rootScope.valor = 7;
-            $rootScope.mostraVencedor = false;
-            if (!$rootScope.jogOuPara) {
+        $rootScope.sort = function (player) {
+            $rootScope.value = 7;
+            $rootScope.showWinner = false;
+            if (!$rootScope.rollDice) {
 
-                $scope.sorteioJ = setInterval(function () {
-                    if (jogador == 1) {
-                        $rootScope.sJ1 = Math.floor(Math.random() * 6 + 1);                        
+                $scope.sortsPlayer = setInterval(function () {
+                    if (player == 1) {
+                        $rootScope.playerSort1 = Math.floor(Math.random() * 6 + 1);                        
                         $scope.$digest();
                     }
                     else {
-                        $rootScope.sJ2 = Math.floor(Math.random() * 6 + 1);                       
+                        $rootScope.playerSort2 = Math.floor(Math.random() * 6 + 1);                       
                         $scope.$digest();
 
                     }
                 }, 100);
             }
             else {
-                $rootScope.controle = !$rootScope.controle;
-                clearInterval($scope.sorteioJ);
+                $rootScope.control = !$rootScope.control;
+                clearInterval($scope.sortsPlayer);
             }
-            $rootScope.jogOuPara = !$rootScope.jogOuPara;
-            if (jogador == 2 && !$rootScope.jogOuPara) {
+            $rootScope.rollDice = !$rootScope.rollDice;
+            if (player == 2 && !$rootScope.rollDice) {
                 $scope.calcWinner();
-                $rootScope.mostraVencedor = true;
+                $rootScope.showWinner = true;
             }
         }
 
         $scope.calcWinner = function () {
-            if ($rootScope.sJ1 > $rootScope.sJ2)
-                $rootScope.totalJ2--;
+            if ($rootScope.playerSort1 > $rootScope.playerSort2)
+                $rootScope.totalP2--;
 
-            else if ($rootScope.sJ1 < $rootScope.sJ2)
-                $rootScope.totalJ1--;
+            else if ($rootScope.playerSort1 < $rootScope.playerSort2)
+                $rootScope.totalP1--;
         }
 
         $rootScope.reset = function () {
-            $rootScope.totalJ1 = 10;
-            $rootScope.totalJ2 = 10;
-            $rootScope.sJ1 = 0;
-            $rootScope.sJ2 = 0;
+            $rootScope.totalP1 = 10;
+            $rootScope.totalP2 = 10;
+            $rootScope.playerSort1 = 0;
+            $rootScope.playerSort2 = 0;
         }
 
         $rootScope.limpaCadJ1 = function () {
-            $rootScope.nomeDoJ1 = "";
-            $rootScope.nickDoJ1 = "";
-            $rootScope.idadeDoJ1 = "";
+            $rootScope.nameOfP1 = "";
+            $rootScope.nickOfP1 = "";
+            $rootScope.ageOfP1 = "";
         }
 
         $rootScope.limpaCadJ2 = function () {
-            $rootScope.nomeDoJ2 = "";
-            $rootScope.nickDoJ2 = "";
-            $rootScope.idadeDoJ2 = "";
+            $rootScope.nameOfP2 = "";
+            $rootScope.nickOfP2 = "";
+            $rootScope.ageOfP2 = "";
         }
 
     });

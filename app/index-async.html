@@ -55,33 +55,33 @@
 </head>
 <body ng-controller="indexController" class="pagina" ng-cloak>
     <titulo></titulo>
-    <div class="imgdiv1" ng-show="totalJ1 != 0 && totalJ2 != 0"
-        ng-style="{'background-color' : valor == 1 ? 'orange' : (valor == 2 ? 'orangered' : valor == 3 ? 'yellow' : valor == 4 ? 'yellowgreen' : valor == 5 ? 'salmon' : valor == 6 ? 'tomato' : sJ1 > sJ2 ? 'green' : sJ1 < sJ2 ? 'red' : 'gray')}">
-        <div ng-show="mostraDados" class="dadosj1">
+    <div class="imgdiv1" ng-show="totalP1 != 0 && totalP2 != 0"
+        ng-style="{'background-color' : value == 1 ? 'orange' : (value == 2 ? 'orangered' : value == 3 ? 'yellow' : value == 4 ? 'yellowgreen' : value == 5 ? 'salmon' : value == 6 ? 'tomato' : playerSort1 > playerSort2 ? 'green' : playerSort1 < playerSort2 ? 'red' : 'gray')}">
+        <div ng-show="showData" class="dadosj1">
             <ve-dados-j1></ve-dados-j1>
         </div>
         <div class="j1">
             <j1></j1>
         </div>
-        <button ng-click="mostraData()" ng-hide="taCadastrado == false" class="jogar">{{dadoOuOk}}</button>
-        <div ng-show="mostraCadastro || $root.mostraCadJ1" class="cadjog1">
+        <button ng-click="shoData()" ng-hide="isRegistered == false" class="jogar">{{dadoOuOk}}</button>
+        <div ng-show="showRegistration || $root.showRegistrationP1" class="cadjog1">
             <cadastrar-jog1></cadastrar-jog1>
         </div>
     </div>
     <btn-recomeca></btn-recomeca>
-    <div class="imgdiv2" ng-show="totalJ1 != 0 && totalJ2 != 0"
-        ng-style="{'background-color' : valor == 1 ? 'aqua' : (valor == 2 ? 'aquamarine' : valor == 3 ? 'cyan' : valor == 4 ? 'lightskyblue' : valor == 5 ? 'slateblue' : valor == 6 ? 'steelblue': sJ1 < sJ2 ? 'green' : sJ1 > sJ2 ? 'red' : 'gray')}">
+    <div class="imgdiv2" ng-show="totalP1 != 0 && totalP2 != 0"
+        ng-style="{'background-color' : value == 1 ? 'aqua' : (value == 2 ? 'aquamarine' : value == 3 ? 'cyan' : value == 4 ? 'lightskyblue' : value == 5 ? 'slateblue' : value == 6 ? 'steelblue': playerSort1 < playerSort2 ? 'green' : playerSort1 > playerSort2 ? 'red' : 'gray')}">
         <div class="j2">
             <j2></j2>
         </div>
   
-        <div ng-show="mostraDados" class="dadosj2">
+        <div ng-show="showData" class="dadosj2">
             <ve-dados-j2></ve-dados-j2>
         </div>
         <div class="botoes">
-            <button ng-click="mostraCad()" ng-disabled="taCadastrado" class="cadastro">{{cadOuOk}}</button>
+            <button ng-click="showRegis()" ng-disabled="isRegistered" class="cadastro">{{cadOuOk}}</button>
         </div>
-        <div ng-show="mostraCadastro || $root.mostraCadJ2" class="cadjog2">
+        <div ng-show="showRegistration || $root.showRegistrationP2" class="cadjog2">
             <cadastrar-jog2></cadastrar-jog2>
         </div>
     </div>
