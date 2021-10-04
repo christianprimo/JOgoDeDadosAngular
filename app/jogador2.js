@@ -11,6 +11,6 @@ angular.module("componentes")
             '<img ng-if="$root.valor == 5 || $root.sJ2 == 5" src="pictures/dado5.png" class="imgdado2"><br><br>' +
             '<img ng-if="$root.valor == 6 || $root.sJ2 == 6" src="pictures/dado6.png" class="imgdado2"><br><br>' +
             '</div>' +
-            '<button ng-click="$root.sorteio2()" ng-disabled="$root.controle"' +
-            'class="bj2">{{$root.jogOuPara}}</button>'
+            '<button ng-click="$root.sorteio(2)" ng-disabled="$root.controle"' +
+            'class="bj2">{{$root.jogOuPara ? "Parar" : "Jogar"}}</button>'
     })

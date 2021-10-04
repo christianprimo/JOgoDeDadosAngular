@@ -12,7 +12,7 @@ angular.module("myApp")
         $rootScope.taCadastrado = false;
         $rootScope.mostraCadJ1 = false;
         $rootScope.mostraCadJ2 = false;
-        $rootScope.jogOuPara = "Jogar";
+        $rootScope.jogOuPara = false;
 
         $scope.intervalo = setInterval(function () {
             if ($rootScope.valor > 5)
@@ -35,47 +35,45 @@ angular.module("myApp")
                 $rootScope.taCadastrado = true;
         }
 
-        $scope.mostraData = function () {          
-                $scope.mostraDados = !$scope.mostraDados;
+        $scope.mostraData = function () {
+            $scope.mostraDados = !$scope.mostraDados;
         }
 
-        $rootScope.sorteio1 = function () {
+        $rootScope.sorteio = function (jogador) {
             $rootScope.valor = 7;
             $rootScope.mostraVencedor = false;
-            if ($scope.controleIf) {
-                $scope.controleIf = false;   
-                $rootScope.jogOuPara = "Parar";             
-                $scope.sorteioJ1 = setInterval(function () {
-                    $rootScope.sJ1 = Math.floor(Math.random() * 6 + 1);
-                    $scope.$digest();
-                }, 100);
-            }
-            else {
-                $rootScope.jogOuPara = "Jogar";
-                $rootScope.controle = false;
-                clearInterval($scope.sorteioJ1);
-            }
-        }
+            if (!$rootScope.jogOuPara) {
 
-        $rootScope.sorteio2 = function () {
-            if (!$scope.controleIf) {
-                $scope.controleIf = true;
-                $rootScope.jogOuPara = "Parar";
-                $scope.sorteioJ2 = setInterval(function () {
-                    $rootScope.sJ2 = Math.floor(Math.random() * 6 + 1);
-                    $scope.$digest();
+                $scope.sorteioJ = setInterval(function () {
+                    if (jogador == 1) {
+                        $rootScope.sJ1 = Math.floor(Math.random() * 6 + 1);
+                        console.log(jogador);
+                        console.log($rootScope.sJ1);
+                        console.log($rootScope.sJ2);
+                        $scope.$digest();
+                    }
+                    else {
+                        $rootScope.sJ2 = Math.floor(Math.random() * 6 + 1);
+                        console.log(jogador);
+                        console.log($rootScope.sJ1);
+                        console.log($rootScope.sJ2);
+                        $scope.$digest();
+
+                    }
                 }, 100);
             }
             else {
-                $rootScope.jogOuPara = "Jogar";
-                $rootScope.controle = true;
-                clearInterval($scope.sorteioJ2);
-                $scope.veVencedor();
+                $rootScope.controle = !$rootScope.controle;
+                clearInterval($scope.sorteioJ);
+            }
+            $rootScope.jogOuPara = !$rootScope.jogOuPara;
+            if(jogador == 2 && !$rootScope.jogOuPara){ 
+                $scope.calcWinner();
                 $rootScope.mostraVencedor = true;
             }
-        }
+        }       
 
-        $scope.veVencedor = function () {
+        $scope.calcWinner = function () {
             if ($rootScope.sJ1 > $rootScope.sJ2)
                 $rootScope.totalJ2--;
 
