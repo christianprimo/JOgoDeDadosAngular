@@ -7,7 +7,7 @@ angular.module("myApp")
         $rootScope.playerSort2 = 0;
         $rootScope.controlPlayer = true;
         $rootScope.showWinner = false;
-        $scope.showData = false;
+        $rootScope.showData = false;
         $rootScope.isRegistered = false;
         $rootScope.showRegistrationP1 = false;
         $rootScope.showRegistrationP2 = false;
@@ -25,17 +25,17 @@ angular.module("myApp")
             clearInterval($scope.interval);
         }
 
-        $scope.showRegis = function () {
-            $scope.showRegistration = !$scope.showRegistration;
+        $rootScope.showRegis = function () {
+            $rootScope.showRegistration = !$rootScope.showRegistration;
         }
 
-        $scope.checkRegistration = function () {
+        $rootScope.checkRegistration = function () {
             if ($rootScope.nameOfP1 != undefined && $rootScope.nickOfP1 != undefined && $rootScope.ageOfP1 != undefined && $rootScope.nameOfP2 != undefined && $rootScope.nickOfP2 != undefined && $rootScope.ageOfP2 != undefined)
-                $rootScope.isRegistered = true;
+                $rootScope.isRegistered = true;               
         }
 
-        $scope.shoData = function () {
-            $scope.showData = !$scope.showData;
+        $rootScope.shoData = function () {
+            $rootScope.showData = !$rootScope.showData;
         }
 
         $rootScope.sort = function (player) {
