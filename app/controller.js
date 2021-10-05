@@ -5,7 +5,7 @@ angular.module("myApp")
         $rootScope.value = 0;
         $rootScope.playerSort1 = 0;
         $rootScope.playerSort2 = 0;
-        $rootScope.control = true;
+        $rootScope.controlPlayer = true;
         $rootScope.showWinner = false;
         $scope.showData = false;
         $rootScope.isRegistered = false;
@@ -56,7 +56,7 @@ angular.module("myApp")
                 }, 100);
             }
             else {
-                $rootScope.control = !$rootScope.control;
+                $rootScope.controlPlayer = !$rootScope.controlPlayer;
                 clearInterval($scope.sortsPlayer);
             }
             $rootScope.rollDice = !$rootScope.rollDice;
